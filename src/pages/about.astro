@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="Sobre | Ana Amélia" description="Sobre Ana Amélia!">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="Sobre"
+				tagline="Obrigada por apareceres. Leia abaixo para saber mais sobre mim e minha formação."
+			>
+				<!-- <img
+					width="1553"
+					height="873"
+					src="/assets/"
+					alt="Ana Amélia no trabalho com uma colega."
+				/> -->
+			</Hero>
+
+			<section>
+				<h2 class="section-title">INFORMAÇÕES SOBRE MIM</h2>
+				<div class="content">
+					<p>
+						Meu nome é Ana Amélia, tenho 17 anos e descobri minha paixão pela programação há pouco tempo. 
+						Desde então, tenho dedicado meu tempo ao aprendizado constante e ao aprimoramento das minhas habilidades. 
+						A cada novo desafio, sinto uma empolgação renovada e uma curiosidade crescente em explorar as possibilidades que a tecnologia oferece.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">MINHAS HABILIDADES</h2>
+				<div class="content">
+					<p>Atualmente, tenho conhecimento sólido em HTML5, CSS3 e JavaScript, além de estar me aprofundando no estudo de Python. 
+						Essas linguagens não apenas me permitem criar interfaces web dinâmicas e responsivas, mas também me desafiam a pensar de forma lógica e estruturada.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">MINHA EXPERIÊNCIA</h2>
+				<div class="content">
+					<p>Desde o início de 2023, sou estudante na Escola Profissional do Fundão, onde tenho a oportunidade de combinar teoria e prática em um ambiente voltado para a informática. 
+						Além disso, atuo como programadora de informática, aplicando meus conhecimentos para desenvolver e aprimorar projetos que envolvem tecnologias web. 
+						Este papel tem sido essencial para meu crescimento profissional, pois me permite aprender na prática e enfrentar desafios reais.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">OBJETIVOS FUTUROS</h2>
+				<div class="content">
+					<p>Tenho o objetivo de expandir minhas habilidades em programação, especialmente em Python e SQL, para poder contribuir em projetos mais complexos e diversificados. 
+						Além disso, pretendo explorar outras áreas da tecnologia, como inteligência artificial e desenvolvimento de aplicativos móveis, conforme minha jornada de aprendizado avança.
+					</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
